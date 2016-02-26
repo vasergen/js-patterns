@@ -14,4 +14,4 @@ Car.prototype.toString = function() {
 }
 
 let car = new Car('Honda', 1989)
-console.log(car.toString());
+console.log(car.toString())
