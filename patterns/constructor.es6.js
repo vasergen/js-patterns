@@ -15,4 +15,5 @@ class Car {
 }
 
 let car = new Car('Honda', 1989)
+
 console.log(car.toString())
