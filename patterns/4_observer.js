@@ -46,7 +46,7 @@ Worker.prototype.update = function (message, data) {
   }
 }
 
-//Employer - Concrete Subject
+//Boss - Concrete Subject
 function Boss() {}
 extend(Boss.prototype, new Subject())
 
