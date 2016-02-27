@@ -6,20 +6,18 @@
 
 //Subject
 function Subject() {
-  this.observes = new Set()
+  this.observers = new Set()
 
-  this.addObserver = function functionName(observer) {
-    return this.observes.add(observer)
+  this.addObserver = function(observer) {
+    return this.observers.add(observer)
   }
 
   this.deleteObserver = function(observer) {
-    return this.observes.delete(observer)
+    return this.observers.delete(observer)
   }
 
   this.notify = function(message, data) {
-    this.observes.forEach((value, key) => {
-      value.update(message, data)
-    })
+    this.observers.forEach(observer => observer.update(message, data))
   }
 }
 
@@ -28,18 +26,11 @@ function Observer() {
   this.update = function(message, data) {}
 }
 
-//Naive Extend function
-function extend( obj, extension ){
-  for ( var key in extension ){
-    obj[key] = extension[key];
-  }
-}
-
 //Worker - Concrete Observer
 function Worker(name) {
   this.name = name
 }
-extend(Worker.prototype, new Observer)
+Object.assign(Worker.prototype, new Observer())
 Worker.prototype.update = function (message, data) {
   if(message == 'money') {
     console.log(`${this.name}: Thanks boss, I've got ${data}. `);
@@ -48,7 +39,7 @@ Worker.prototype.update = function (message, data) {
 
 //Boss - Concrete Subject
 function Boss() {}
-extend(Boss.prototype, new Subject())
+Object.assign(Boss.prototype, new Subject())
 
 //Test
 let worker1 = new Worker('worker1')
