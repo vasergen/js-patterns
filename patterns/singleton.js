@@ -24,7 +24,7 @@ function Counter() {
 }
 
 //Singleton Wrapper
-function SingletonWrapper(ClassName, ...args) {
+function SingletonWrapper(ClassName) {
   let instance
 
   return {
@@ -39,7 +39,7 @@ function SingletonWrapper(ClassName, ...args) {
 }
 
 //Singleton
-let CounterSingleton = SingletonWrapper(Counter, 2)
+let CounterSingleton = SingletonWrapper(Counter)
 
 let countA = CounterSingleton.getInstance()
 let countB = CounterSingleton.getInstance()
