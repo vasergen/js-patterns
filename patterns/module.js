@@ -35,4 +35,5 @@ let counter = (function() {
 
 counter.inc()
 counter.inc()
+
 counter.print()
