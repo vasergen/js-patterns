@@ -28,11 +28,18 @@ function Observer() {
   this.update = function(message, data) {}
 }
 
+//Naive Extend function
+function extend( obj, extension ){
+  for ( var key in extension ){
+    obj[key] = extension[key];
+  }
+}
+
 //Worker - Concrete Observer
 function Worker(name) {
   this.name = name
 }
-Worker.prototype = new Observer()
+extend(Worker.prototype, new Observer)
 Worker.prototype.update = function (message, data) {
   if(message == 'money') {
     console.log(`${this.name}: Thanks boss, I've got ${data}. `);
@@ -40,16 +47,16 @@ Worker.prototype.update = function (message, data) {
 }
 
 //Employer - Concrete Subject
-function Employer() {}
-Employer.prototype = new Subject()
+function Boss() {}
+extend(Boss.prototype, new Subject())
 
 //Test
 let worker1 = new Worker('worker1')
 let worker2 = new Worker('worker2')
-let employer = new Employer()
+let boss = new Boss()
 
-employer.addObserver(worker1)
-employer.addObserver(worker2)
-employer.notify('money', '1000$')
-employer.deleteObserver(worker1)
-employer.notify('money', '2000$')
+boss.addObserver(worker1)
+boss.addObserver(worker2)
+boss.notify('money', '1000$')
+boss.deleteObserver(worker1)
+boss.notify('money', '2000$')
