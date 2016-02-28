@@ -1,10 +1,10 @@
 'use strict'
 
 let assert = require('assert')
-let pubsub = require('../patterns/publish_subscribe')
-let Worker = pubsub.Worker
-let Boss = pubsub.Boss
-let Goverment = pubsub.Goverment
+let pubsubExample = require('../publish_subscribe/example')
+let Worker = pubsubExample.Worker
+let Boss = pubsubExample.Boss
+let Goverment = pubsubExample.Goverment
 
 describe('Publish Subscribe Pattern', () => {
   let boss = new Boss()

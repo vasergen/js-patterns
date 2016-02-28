@@ -29,26 +29,8 @@ function Observer() {
   }
 }
 
-//Boss - Concrete Subject
-function Boss() {}
-Object.assign(Boss.prototype, new Subject()) //mixin Subject in Boss
-
-//Worker - Concrete Observer
-function Worker(name) {
-  this.money = 0
-  this.name = name
-  this.updateMoney = function(money) {
-    return this.money += parseInt(money)
-  }
-}
-Object.assign(Worker.prototype, new Observer()) //mixin Observer in Worker
-Worker.prototype.update = function (message, data) {
-  if(message == 'money')
-    this.updateMoney(data)
-}
-
 //Exports
 module.exports = {
-  Boss,
-  Worker
+  Subject,
+  Observer
 }
