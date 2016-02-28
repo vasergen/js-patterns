@@ -7,13 +7,13 @@
 //PublishSubscribe
 function PublishSubscribe() {
   //Private
-  let events = new Map()
+  let topics = new Map()
 
   function getEvent(event) {
-    if(!events.has(event))
-      events.set(event, new Set())
+    if(!topics.has(event))
+      topics.set(event, new Set())
 
-    return events.get(event)
+    return topics.get(event)
   }
 
   //Public
@@ -34,7 +34,7 @@ function PublishSubscribe() {
 function Event() {}
 Object.assign(Event.prototype, PublishSubscribe())
 
-//test
+//Example, how to use 
 let event = new Event()
 let subscriber1 = data => console.log(`subscriber1: I've got ${data}`)
 let subscriber2 = data => console.log(`subscriber2: I've got ${data}`)

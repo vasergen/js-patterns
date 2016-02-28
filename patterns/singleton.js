@@ -20,25 +20,28 @@ function Singleton(ClassName) {
 
 //Counter - some class which later will be our singleton instance
 function Counter() {
-  let _initValue = 0
-  let _count = _initValue
+  let initValue = 0
+  let count = initValue
 
   return {
-    inc() { return ++_count },
-    dec() { return --_count },
-    reset() { count = _initValue },
-    print() { console.log(`Count: ${_count}`) }
+    inc() {
+      return ++count
+    },
+    dec() {
+      return --count
+    },
+    reset() {
+      count = initValue
+    },
+    getValue() {
+      return count
+    }
   }
 }
 
 //CounterSingleton
 let CounterSingleton = Singleton(Counter)
 
-//Test
-let countA = CounterSingleton.getInstance()
-let countB = CounterSingleton.getInstance()
-countA.inc()
-countA.inc()
-countB.inc()
-
-countA.print()
+module.exports = {
+  CounterSingleton
+}

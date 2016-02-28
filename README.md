@@ -8,8 +8,3 @@ Why? I was interviewed in different companies as a javascript developer and they
 - [Essential Js Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book)
 - [Singleton Pattern](http://bumbu.me/javascript-singleton-pattern/)
 - [jquery-tiny-pubsub](https://habrahabr.ru/post/270339/ https://github.com/cowboy/jquery-tiny-pubsub)
-
-
-
-
-
