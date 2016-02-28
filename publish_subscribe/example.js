@@ -24,7 +24,7 @@ function Worker() {
   }
 }
 
-//---Example of usage----
+//=====Example of usage=====
 let boss = new Boss()
 let goverment = new Goverment()
 let workerA = new Worker()
@@ -41,6 +41,7 @@ goverment.publish('taxesB', -1000)
 
 workerA.getMoney() //1500
 workerB.getMoney() //1000
+//==========================
 
 
 //Exports

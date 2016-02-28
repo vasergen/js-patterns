@@ -34,6 +34,19 @@ Worker.prototype.update = function (message, data) {
     this.updateMoney(data)
 }
 
+//==========Example of usage==========
+let worker1 = new Worker
+let worker2 = new Worker
+let boss = new Boss
+
+boss.addObserver(worker1)
+boss.addObserver(worker2)
+boss.notify('money', 1000)
+
+worker1.getMoney() //1000
+worker2.getMoney() //1000
+//=====================================
+
 //Exports
 module.exports = {
   Boss,

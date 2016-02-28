@@ -41,6 +41,7 @@ counterB.inc()
 counterB.inc()
 counterA.getValue() //3
 counterB.getValue() //3
+//====================================
 
 //Exports
 module.exports = {
