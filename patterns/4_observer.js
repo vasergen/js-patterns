@@ -6,18 +6,18 @@
 
 //Subject
 function Subject() {
-  this.observers = new Set()
+  let _observers = new Set()
 
   this.addObserver = function(observer) {
-    return this.observers.add(observer)
+    return _observers.add(observer)
   }
 
   this.deleteObserver = function(observer) {
-    return this.observers.delete(observer)
+    return _observers.delete(observer)
   }
 
   this.notify = function(message, data) {
-    this.observers.forEach(observer => observer.update(message, data))
+    _observers.forEach(observer => observer.update(message, data))
   }
 }
 
