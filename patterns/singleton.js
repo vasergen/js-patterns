@@ -4,12 +4,12 @@
 * Pattern: Singleton
 */
 
-//Singleton
+//Singleton Wrapper
 function Singleton(ClassName) {
   let instance
 
   return {
-    getInstance() {
+    getInstance: function() {
       if(!instance)
         instance = new ClassName()
 
@@ -39,7 +39,6 @@ function Counter() {
   }
 }
 
-//CounterSingleton
 let CounterSingleton = Singleton(Counter)
 
 module.exports = {

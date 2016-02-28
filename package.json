@@ -1,21 +1,22 @@
 {
   "name": "js-patterns",
   "version": "1.0.0",
-  "description": "Javascript Patterns",
+  "description": "Javascript Design Patterns",
   "main": "",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vasergen/js-patterns.git"
   },
   "keywords": [
-    "js-patterns",
-    "javascript-patterns",
+    "js patterns",
+    "javascript patterns",
+    "javascript design patterns",
     "patterns"
   ],
   "author": "vasergen",

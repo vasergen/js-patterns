@@ -7,13 +7,13 @@
 //PublishSubscribe
 function PublishSubscribe() {
   //Private
-  let topics = new Map()
+  let events = new Map()
 
   function getEvent(event) {
-    if(!topics.has(event))
-      topics.set(event, new Set())
+    if(!events.has(event))
+      events.set(event, new Set())
 
-    return topics.get(event)
+    return events.get(event)
   }
 
   //Public
@@ -30,17 +30,32 @@ function PublishSubscribe() {
   }
 }
 
-//Event Object
-function Event() {}
-Object.assign(Event.prototype, PublishSubscribe())
+//Worker
+function Worker() {
+  let money = 0
 
-//Example, how to use 
-let event = new Event()
-let subscriber1 = data => console.log(`subscriber1: I've got ${data}`)
-let subscriber2 = data => console.log(`subscriber2: I've got ${data}`)
+  return {
+    updateMoney(value) {
+      return money += value
+    },
+    getMoney() {
+      return money
+    }
+  }
 
-event.subscribe('money', subscriber1)
-event.subscribe('money', subscriber2)
-event.publish('money', '1000$')
-event.unsubscribe('money', subscriber1)
-event.publish('money', '2000$')
+}
+
+//Boss
+function Boss() {}
+Object.assign(Boss.prototype, PublishSubscribe()) //mixin PublishSubscribe in Boss object
+
+//Goverment
+function Goverment() {}
+Object.assign(Goverment.prototype, PublishSubscribe()) //mixin PublishSubscribe in Goverment object
+
+//Exports
+module.exports = {
+  Worker,
+  Boss,
+  Goverment
+}
