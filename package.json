@@ -1,0 +1,27 @@
+{
+  "name": "js-patterns",
+  "version": "1.0.0",
+  "description": "Javascript Patterns",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasergen/js-patterns.git"
+  },
+  "keywords": [
+    "js-patterns",
+    "javascript-patterns",
+    "patterns"
+  ],
+  "author": "vasergen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vasergen/js-patterns/issues"
+  },
+  "homepage": "https://github.com/vasergen/js-patterns#readme"
+}
