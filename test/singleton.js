@@ -1,8 +1,8 @@
 'use strict'
 
 let assert = require('assert')
-let singleton = require('../patterns/singleton')
-let CounterSingleton = singleton.CounterSingleton
+let singletonExample = require('../singleton/example')
+let CounterSingleton = singletonExample.CounterSingleton
 
 describe('Singleton Pattern', () => {
   let counterA = CounterSingleton.getInstance()

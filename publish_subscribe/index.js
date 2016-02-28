@@ -2,7 +2,6 @@
 
 /**
  * [PublishSubscribe]
- * 
  */
 function PublishSubscribe() {
   //private

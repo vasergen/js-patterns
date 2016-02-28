@@ -1,7 +1,4 @@
 'use strict'
-/**
-* Example: How can be used
-*/
 
 let PublishSubscribe = require('./index').PublishSubscribe
 
@@ -27,6 +24,26 @@ function Worker() {
   }
 }
 
+//---Example of usage----
+let boss = new Boss()
+let goverment = new Goverment()
+let workerA = new Worker()
+let workerB = new Worker()
+
+boss.subscribe('salary', workerA.updateMoney)
+boss.subscribe('salary', workerB.updateMoney)
+goverment.subscribe('taxesA', workerA.updateMoney)
+goverment.subscribe('taxesB', workerB.updateMoney)
+
+boss.publish('salary', 2000)
+goverment.publish('taxesA', -500)
+goverment.publish('taxesB', -1000)
+
+workerA.getMoney() //1500
+workerB.getMoney() //1000
+
+
+//Exports
 module.exports = {
   Boss,
   Goverment,
